@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Google Search Extractor",
+  "version": "1.0",
+  "description": "Extracts URLs and domains from Google search results.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.com/search*"],
+      "js": ["content.js"]
+    }
+  ]
+}
